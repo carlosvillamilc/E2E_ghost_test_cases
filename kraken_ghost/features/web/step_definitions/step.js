@@ -1,12 +1,5 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-/*16. Login 
-Design 
-Borrar label 
-Save 
-View site 
-Validar que no este el label 
-Cuenta 
-Logout */
+var {browser} = require('cucumber')
 
 let globalText = "";
 When('I enter email {kraken-string}', async function (email) {
@@ -23,6 +16,7 @@ When('I click Sign In', async function() {
     let element = await this.driver.$('#ember12');
     return await element.click();
 })
+
 
 Then('I click on Design', async function () {
     let element = await this.driver.$("#ember42");    
@@ -65,6 +59,46 @@ Then('I check Navigation Text on site', async function () {
     navText.toLowerCase();
     console.log(navText);    
     let element = await this.driver.$("//*[text()='Test']");
+
+When('I click Staff', async function() {
+    let element = await this.driver.$('#ember39');
+    return await element.click();
+})
+
+When('I click Invite people', async function() {
+    let element = await this.driver.$('button=Invite people');
+    element.click();
+})
+
+When('I enter invited email', async function () {
+    let element = await this.driver.$('#new-user-email');
+    return await element.setValue("yirzajes@gmail.com");
+});
+
+When('I click button invited', async function() {
+    let element = await this.driver.$('button=Send invitation now');
+    element.click();
+})
+
+When('I click close popup Invite a New User', async function() {
+    let element = await this.driver.$('.close');
+    element.click();
+})
+
+When('I close session', async function() {
+    let element = await this.driver.$('.gh-user-email');
+    element.click();
+})
+
+When('I click option Sign Out', async function() {
+    let element = await this.driver.$('=Sign Out');
+    element.click();
+})
+
+/*
+Then('I click on the first conversation', async function () {
+    let element = await this.driver.$(".i224opu6 > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)");
+
     return await element.click();
 });
 
@@ -106,7 +140,7 @@ Then('I click on Publish', async function () {
     let element = await this.driver.$('.gh-btn gh-btn-outline');    
     return await element.click();
 });
-/*
+
 Then('I click on the redact message inputbox', async function () {
     let element = await this.driver.$("p.kvgmc6g5");
     return await element.click();
