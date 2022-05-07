@@ -51,6 +51,8 @@ When('I click option Sign Out', async function() {
     element.click();
 })
 
+
+
 /*
 Then('I click on the first conversation', async function () {
     let element = await this.driver.$(".i224opu6 > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)");

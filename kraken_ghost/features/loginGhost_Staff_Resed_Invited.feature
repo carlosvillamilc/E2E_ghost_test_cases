@@ -12,13 +12,9 @@ Scenario: Como primer usuario inicio sesion
     And I click next
     And I wait for 2 seconds
     And I click Staff
-    And I click Invite people
-    And I wait for 3 seconds
-    And I enter invited email
-    And I click button invited
+    And I click Resend
     And I wait for 2 seconds
-    And I click close popup Invite a New User
-    And I wait for 2 seconds
+    Then I see the message resend Invited "Sending Invite..."
     And I close session
     And I wait for 3 seconds
     And I click option Sign Out
