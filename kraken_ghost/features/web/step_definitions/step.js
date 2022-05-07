@@ -1,4 +1,5 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
+var {browser} = require('cucumber')
 
 When('I enter email {kraken-string}', async function (email) {
     let element = await this.driver.$('#ember8');
@@ -34,6 +35,22 @@ When('I click button invited', async function() {
     let element = await this.driver.$('button=Send invitation now');
     element.click();
 })
+
+When('I click close popup Invite a New User', async function() {
+    let element = await this.driver.$('.close');
+    element.click();
+})
+
+When('I close session', async function() {
+    let element = await this.driver.$('.gh-user-email');
+    element.click();
+})
+
+When('I click option Sign Out', async function() {
+    let element = await this.driver.$('=Sign Out');
+    element.click();
+})
+
 /*
 Then('I click on the first conversation', async function () {
     let element = await this.driver.$(".i224opu6 > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)");

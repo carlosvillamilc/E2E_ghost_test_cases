@@ -13,6 +13,13 @@ Scenario: Como primer usuario inicio sesion
     And I wait for 2 seconds
     And I click Staff
     And I click Invite people
-     And I wait for 3 seconds
+    And I wait for 3 seconds
     And I enter invited email
     And I click button invited
+    And I wait for 2 seconds
+    And I click close popup Invite a New User
+    And I wait for 2 seconds
+    And I close session
+    And I wait for 3 seconds
+    And I click option Sign Out
+    And I wait for 10 seconds
