@@ -58,7 +58,7 @@ Then('I check Navigation Text on site', async function () {
     let navText = String(globalText);
     navText.toLowerCase();
     console.log(navText);    
-    let element = await this.driver.$("//*[text()='Test']");
+    let element = await this.driver.$("//*[text()='Test']")});
 
 When('I click Staff', async function() {
     let element = await this.driver.$('#ember39');
