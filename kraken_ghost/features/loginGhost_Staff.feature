@@ -10,4 +10,9 @@ Scenario: Como primer usuario inicio sesion
     When I enter password "<PASSWORD1>"
     And I wait for 2 seconds
     And I click next
-    And I wait for 7 seconds
+    And I wait for 2 seconds
+    And I click Staff
+    And I click Invite people
+     And I wait for 3 seconds
+    And I enter invited email
+    And I click button invited
