@@ -8,6 +8,9 @@ Scenario: Como primer usuario inicio sesion
     And I click on Suscribe
     And I wait for 1 seconds
     And I enter email to subscribe "<SUSCRIBEEMAIL>"
+    And I wait for 5 seconds
+    And I check subscribe error
+    And I wait for 1 seconds
     And I click on X button
     
     

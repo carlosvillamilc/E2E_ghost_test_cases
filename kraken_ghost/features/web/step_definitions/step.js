@@ -56,6 +56,15 @@ When('I enter email to subscribe {kraken-string}', async function (email) {
     return await element2.click();
 });
 
+Then('I check subscribe error', async function() {
+    let errorMsg = 'Please enter a valid email address!'    
+    let responseElement= await this.driver.$('div.message-error');    
+    responseMessage = await responseElement.getText();    
+    console.log(responseMessage)
+    expect(responseMessage).to.equal(errorMsg);
+
+});
+
 Then('I click on X button', async function () {    
     let element = await this.driver.$('#subscribe > a.subscribe-close-button');
     return await element.click();
@@ -89,16 +98,15 @@ When('I click button invited', async function() {
     element.click();
 });
 
-Then('I click button send invitation and check', async function() {
-    let errorMsg = 'A user with that email address was already invited'
-    let element = await this.driver.$('button=Send invitation now');
-    await element.click();
+
+Then('I check error', async function() {
+    let errorMsg = 'A user with that email address was already invited.'    
     let responseElement= await this.driver.$('p.response');    
     responseMessage = await responseElement.getText();    
+    console.log(responseMessage)
     expect(responseMessage).to.equal(errorMsg);
 
 });
-
 
 When('I click close popup Invite a New User', async function() {
     let element = await this.driver.$('.close');

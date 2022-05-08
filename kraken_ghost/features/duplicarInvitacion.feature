@@ -26,8 +26,13 @@ Scenario: Como primer usuario inicio sesion
     And I wait for 2 seconds
     And I enter invited email
     And I wait for 2 seconds
-    And I click button send invitation and check
-
-    And I close session
-    And I wait for 3 seconds
-    And I click option Sign Out
+    And I click button invited
+    And I wait for 5 seconds
+    And I check error
+    And I wait for 2 seconds
+    And I click close popup Invite a New User
+    
+    And I wait for 5 seconds
+    And I click on profile
+    And I wait for 1 seconds
+    And I click Sign Out
