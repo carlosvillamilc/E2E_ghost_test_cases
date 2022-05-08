@@ -1,4 +1,4 @@
-Feature: Login - Design - Borrar Label - Save - Logout
+Feature: Login - Cuenta - Cambiar nombre - Save - Logout
 
 @user1 @web
 
@@ -11,23 +11,16 @@ Scenario: Como primer usuario inicio sesion
     And I wait for 2 seconds
     And I click Sign In
     And I wait for 1 seconds
-    And I click on View Site
-    And I wait for 1 seconds
-    And I click on Suscribe
-    And I wait for 1 seconds
-    And I enter email to suscribe "<SUSCRIBEEMAIL>"
     
+    And I click on profile
     And I wait for 1 seconds
-    And I check Navigation Text
+    And I click on Your Profile
     And I wait for 1 seconds
-    #And I check Navigation Text on site
-    #And I wait for 1 seconds
-
-    And I delete first design navigation item
+    And I enter new user name "<NEWNAME>"
     And I wait for 1 seconds
     And I click on Save
+
     And I wait for 1 seconds
-    
     And I click on profile
     And I wait for 1 seconds
     And I click Sign Out

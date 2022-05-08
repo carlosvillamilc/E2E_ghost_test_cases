@@ -11,10 +11,12 @@ Scenario: Como primer usuario inicio sesion
     And I wait for 2 seconds
     And I click Sign In
     And I wait for 1 seconds
+
     And I click on Design
     And I wait for 1 seconds
     And I check Navigation Text
     And I wait for 1 seconds
+    
     #And I click on View Site
     #And I wait for 1 seconds
     #And I check Navigation Text on site
