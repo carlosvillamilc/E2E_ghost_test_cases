@@ -17,7 +17,7 @@ When('I click next', async function() {
 })
 
 When('I click Staff', async function() {
-    let element = await this.driver.$('#ember39');
+    let element = await this.driver.$('*=Staff');
     return await element.click();
 })
 
