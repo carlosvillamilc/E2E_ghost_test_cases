@@ -40,22 +40,5 @@ describe('Crear post y buscarlo', () => {
         cy.get('div.gh-nav-bottom').click();
         cy.wait(100);
         cy.get('a[href="#/signout/"]').click();
-
-        
-        /*cy.get('#ember3 > div > main > section > header > section > button').click();
-        cy.get('#new-user-email').type(inviteUser);
-        cy.wait(1000)
-        cy.get('div[class="modal-footer"]').click();
-        cy.get('div[class="modal-footer"]').type('{esc}')
-        cy.get('#ember3 > div > main > section > header > section > button').click();
-        cy.get('#new-user-email').type(inviteUser);
-        cy.wait(1000)
-        cy.get('div[class="modal-footer"]').click();
-        cy.wait(1000)
-        cy.get('p.response').eq(0).should('contain', 'A user with that email address was already invited.')
-        cy.get('div[class="modal-footer"]').type('{esc}')*/
-        //cy.wait(2000)        
-        //cy.get('div.gh-nav-bottom').click();
-        //cy.get('a[href="#/signout/"]').click();*/
     })
   })
