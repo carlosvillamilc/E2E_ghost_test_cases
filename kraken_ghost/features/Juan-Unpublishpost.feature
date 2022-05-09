@@ -18,6 +18,7 @@ Scenario: unpublish a post
     And I click update post
     And I wait for 2 seconds
     And I click unpublish option
+    And I confirm unpublish
 
     And I close session
     And I wait for 3 seconds

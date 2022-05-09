@@ -18,6 +18,7 @@ Scenario: Eliminar pagina ya creada
     And I click post settings
     And I wait for 2 seconds
     And I click delete page
+    And I click confirm delete page
 
     And I close session
     And I wait for 3 seconds

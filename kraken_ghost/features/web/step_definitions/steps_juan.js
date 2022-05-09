@@ -26,6 +26,11 @@ When('I click unpublish option', async function() {
     element.click();
 });
 
+When('I confirm unpublish', async function() {
+    let element = await this.driver.$('.gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view');
+    element.click();
+});
+
 // Create Tag
 
 When('I click on Tags', async function() {
@@ -79,5 +84,10 @@ When('I click post settings', async function() {
 
 When('I click delete page', async function() {
     let element = await this.driver.$('.gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button');
+    element.click();
+});
+
+When('I click confirm delete page', async function() {
+    let element = await this.driver.$('.gh-btn gh-btn-red gh-btn-icon ember-view');
     element.click();
 });
