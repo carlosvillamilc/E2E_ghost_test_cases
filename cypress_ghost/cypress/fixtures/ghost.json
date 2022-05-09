@@ -5,5 +5,6 @@
   "user": "c.villamilc@uniandes.edu.co",
   "password": "qwerty12345",
   "inviteUser": "test@gmail.com",
-  "postTitle": "Nuevo Post Titulo"
+  "postTitle": "Nuevo Post Titulo",
+  "newUserName": "Nuevo nombre usuario"
 }
