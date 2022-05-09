@@ -47,4 +47,4 @@ Thumbs.db
 /kraken_ghost/node_modules
 
 # Cypress files
-/cypress_ghost\node_modulesclear
+/cypress_ghost\node_modules
