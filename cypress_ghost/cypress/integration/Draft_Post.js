@@ -3,7 +3,7 @@ let password = '';
 let inviteUser='';
 let postTitle= '';
 
-describe('Crear post', () => {
+describe('Crear post de los que se encuentran en Draft', () => {
     beforeEach(()=>{        
         cy.fixture('ghost.json').as('ghost')
         cy.fixture('ghost.json').then((data)  => {
@@ -16,7 +16,7 @@ describe('Crear post', () => {
         cy.wait(2000)        
         
     })
-    it('Login, Test crear Post', () => {       
+    it('Login, Test Draft Post', () => {       
         cy.get('#ember8').type(user)
         cy.get('#ember10').type(password)
         cy.get('#ember12').click()        
