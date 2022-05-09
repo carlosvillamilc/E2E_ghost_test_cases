@@ -7,7 +7,7 @@ let postTitle= '';
 let newUserName = '';
 let errorMail = '';
 
-describe('Crear post y buscarlo', () => {
+describe('View Page, Subscribe, Check', () => {
     beforeEach(()=>{        
         cy.fixture('ghost.json').as('ghost')
         cy.fixture('ghost.json').then((data)  => {
@@ -23,7 +23,7 @@ describe('Crear post y buscarlo', () => {
         cy.wait(1000)        
         
     })
-    it('Login, View Page, Subscribe, Check, Logout', () => {       
+    it('View Page, Subscribe, Check', () => {       
         
         cy.url().should('eq', 'http://localhost:2368/')        
         cy.get(`a[href="#subscribe"]`).eq(0).click();

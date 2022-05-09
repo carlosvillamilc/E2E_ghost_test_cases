@@ -6,7 +6,7 @@ let inviteUser='';
 let postTitle= '';
 let newUserName = '';
 
-describe('Crear post y buscarlo', () => {
+describe('Cambiar nombre perfil', () => {
     beforeEach(()=>{        
         cy.fixture('ghost.json').as('ghost')
         cy.fixture('ghost.json').then((data)  => {

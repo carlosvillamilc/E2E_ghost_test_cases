@@ -19,7 +19,7 @@ describe('Crear post y buscarlo', () => {
         cy.wait(2000)        
         
     })
-    it('Login, Test send staff invitation duplicated', () => {       
+    it('Login, crear post, search, check, logout', () => {       
         cy.get('#ember8').type(user)
         cy.get('#ember10').type(password)
         cy.get('#ember12').click()        

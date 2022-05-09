@@ -6,7 +6,7 @@ let inviteUser='';
 let postTitle= '';
 let newUserName = '';
 
-describe('Crear post y buscarlo', () => {
+describe('Borrar label', () => {
     beforeEach(()=>{        
         cy.fixture('ghost.json').as('ghost')
         cy.fixture('ghost.json').then((data)  => {
@@ -16,9 +16,9 @@ describe('Crear post y buscarlo', () => {
             postTitle = data.postTitle
             newUserName = data.newUserName
         })
-        cy.visit('http://localhost:2368/ghost/')
-        
+        cy.visit('http://localhost:2368/ghost/')        
         cy.wait(2000)        
+        
         
     })
     it('Login, Borrar Label, Logout', () => {       
@@ -26,7 +26,6 @@ describe('Crear post y buscarlo', () => {
         cy.get('#ember10').type(password)
         cy.get('#ember12').click()        
         cy.url().should('eq', 'http://localhost:2368/ghost/#/site')
-        //cy.get('a[href="#/settings/design/"]').click();
         cy.wait(1000)
         cy.get('#ember42').click();
         cy.wait(500)
