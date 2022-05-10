@@ -61,3 +61,8 @@ When('I click on Scheduled New post', async function(){
     let element = await this.driver.$('#ember2341')
     return await element.click();
 });
+
+When('I click Post', async function(){
+    let element = await this.driver.$('a[href="#/posts/"]')
+    return await element.click();
+});
