@@ -10,6 +10,7 @@ Scenario: unpublish a post
     And I wait for 2 seconds
     When I enter password "<PASSWORD1>"
     And I wait for 2 seconds
+    I click Sign In
 
     And I click Published posts
     And I wait for 2 seconds

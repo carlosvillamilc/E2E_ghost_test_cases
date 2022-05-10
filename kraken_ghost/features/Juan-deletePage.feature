@@ -10,6 +10,7 @@ Scenario: Eliminar pagina ya creada
     And I wait for 2 seconds
     When I enter password "<PASSWORD1>"
     And I wait for 2 seconds
+    I click Sign In
 
     And I enter to the Pages
     And I wait for 2 seconds

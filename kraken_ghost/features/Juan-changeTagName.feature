@@ -10,6 +10,7 @@ Scenario: Cambiar nombre de Tag
     And I wait for 2 seconds
     When I enter password "<PASSWORD1>"
     And I wait for 2 seconds
+    I click Sign In
 
     And I click on Tags
     And I wait for 2 seconds
