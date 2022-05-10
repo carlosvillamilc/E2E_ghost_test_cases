@@ -9,6 +9,8 @@ Scenario: Como primer usuario inicio sesion
     And I wait for 2 seconds
     When I enter password "<PASSWORD1>"
     And I wait for 2 seconds
+    And I click Sign In
+    And I wait for 2 seconds
     And I click Post
     And I wait for 2 seconds
     And I click on New Post
