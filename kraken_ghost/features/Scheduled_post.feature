@@ -16,7 +16,7 @@ Scenario: Como primer usuario inicio sesion
     And I click on Scheduled
     And I wait for 2 seconds
 
-    And I click on Scheduled New post
+    And I click on New Post
     And I wait for 2 seconds
 
     And I enter entre post title "<POSTTITLE>"

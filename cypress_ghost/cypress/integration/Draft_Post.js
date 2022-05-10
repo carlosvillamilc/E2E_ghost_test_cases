@@ -24,7 +24,7 @@ describe('Crear post de los que se encuentran en Draft', () => {
         cy.get('a[href="#/posts/"]').eq(0).click();    
         cy.wait(500)
         cy.get('a[href="#/posts/?type=draft"]').eq(0).click();  
-        cy.get('div[class="ember-view permalink gh-list-data gh-post-list-featured"]').click()
+        cy.get('a[class="ember-view permalink gh-list-data gh-post-list-featured"]').click()
         cy.get('[placeholder="Post Title"]').type(postTitle)
         cy.wait(100)
         cy.get('[data-placeholder="Begin writing your post..."]').type("Nuevo Post Texto")

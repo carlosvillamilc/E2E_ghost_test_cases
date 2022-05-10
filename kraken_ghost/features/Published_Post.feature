@@ -16,16 +16,15 @@ Scenario: Como primer usuario inicio sesion
     
     And I click on Published
     And I wait for 2 seconds
-    And I enter to first published
-    And I wait for 2 seconds
+    And I I click on Publish
     And I enter entre post title "<POSTTITLE>"
     And I wait for 2 seconds
     And I enter entre new post content  "<NEWCONTENT>"
     And I wait for 2 seconds
 
-    And I click on Update
+    And I click on Publish
     And I wait for 2 seconds
-    And I click on Update option
+    And I click on Publish option
     And I wait for 2 seconds
 
     And I close session
