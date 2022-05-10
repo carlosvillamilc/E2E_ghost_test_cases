@@ -45,3 +45,5 @@ Thumbs.db
 # Kraken files
 /kraken_ghost/reports
 /kraken_ghost/node_modules
+
+/cypress_ghost/cypress/videos
