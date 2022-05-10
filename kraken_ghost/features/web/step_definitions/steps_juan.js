@@ -49,14 +49,14 @@ When('I write the tag name', async function () {
 });
 
 When('I click on save tag', async function() {
-    let element = await this.driver.$('.gh-btn gh-btn-blue gh-btn-icon ember-view');
+    let element = await this.driver.$('.gh-btn.gh-btn-blue.gh-btn-icon.ember-view');
     element.click();
 });
 
 // Change tag name
 
 When('I click the first tag', async function() {
-    let element = await this.driver.$('.gh-list-row gh-tags-list-item ember-view');
+    let element = await this.driver.$('.gh-list-row.gh-tags-list-item.ember-view');
     element.click();
 });
 
@@ -73,7 +73,7 @@ When('I enter to the Pages', async function() {
 });
 
 When('I click the first page', async function() {
-    let element = await this.driver.$('.gh-list-row gh-posts-list-item');
+    let element = await this.driver.$('.gh-list-row.gh-posts-list-item');
     element.click();
 });
 
@@ -83,7 +83,7 @@ When('I click post settings', async function() {
 });
 
 When('I click delete page', async function() {
-    let element = await this.driver.$('.gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button');
+    let element = await this.driver.$('.gh-btn.gh-btn-hover-red.gh-btn-icon.settings-menu-delete-button');
     element.click();
 });
 

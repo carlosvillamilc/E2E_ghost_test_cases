@@ -4,13 +4,13 @@ Feature: Login - Pages - Select first one - delete - logout
 
 Scenario: Eliminar pagina ya creada
 
-    Given I navigate to page "http://localhost:2368/ghost/#/signin"
+    Given I navigate to page "http://localhost:2369/ghost/#/signin"
     And I wait for 5 seconds
     When I enter email "<USERNAME1>"
     And I wait for 2 seconds
     When I enter password "<PASSWORD1>"
     And I wait for 2 seconds
-    I click Sign In
+    And I click Sign In
 
     And I enter to the Pages
     And I wait for 2 seconds
