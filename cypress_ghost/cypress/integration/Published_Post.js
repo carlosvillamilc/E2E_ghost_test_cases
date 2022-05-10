@@ -3,7 +3,7 @@ let password = '';
 let inviteUser='';
 let postTitle= '';
 
-describe('Crear post published', () => {
+describe('Published post', () => {
     beforeEach(()=>{        
         cy.fixture('ghost.json').as('ghost')
         cy.fixture('ghost.json').then((data)  => {
@@ -16,7 +16,7 @@ describe('Crear post published', () => {
         cy.wait(2000)        
         
     })
-    it('Login, Test crear Post published', () => {       
+    it('Login, Test crear Post', () => {       
         cy.get('#ember8').type(user)
         cy.get('#ember10').type(password)
         cy.get('#ember12').click()        
@@ -31,8 +31,8 @@ describe('Crear post published', () => {
         cy.wait(100)
         cy.get('div[class="ember-view ember-basic-dropdown-trigger  gh-btn gh-btn-outline gh-publishmenu-trigger"]').click()
         cy.get('button[class="gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view"]').click()
-        cy.get('div.gh-nav-bottom').click();
-        cy.wait(100);
-        cy.get('a[href="#/signout/"]').click();   
+        //cy.get('div.gh-nav-bottom').click();
+        //cy.wait(100);
+        //cy.get('a[href="#/signout/"]').click();   
     })
   })
