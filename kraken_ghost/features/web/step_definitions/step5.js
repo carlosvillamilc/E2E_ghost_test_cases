@@ -17,6 +17,7 @@ Then('I can see other otions in Screen {kraken-string}', async function (mensaje
     if(alertText==mensaje){
         console.log("texto encontrado");
     }else{
+        alertText = await this.driver.$('span=Save settings').click();
         console.log("texto no encontrado");
     }
 });

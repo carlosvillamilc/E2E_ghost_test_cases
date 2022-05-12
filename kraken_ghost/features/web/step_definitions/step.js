@@ -98,7 +98,7 @@ When('I close session', async function() {
 })
 
 When('I click option Sign Out', async function() {
-    let element = await this.driver.$('=Sign Out');
+    let element = await this.driver.$('.dropdown-item.user-menu-signout.ember-view');
     element.click();
 })
 

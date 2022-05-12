@@ -9,7 +9,7 @@ Scenario: Como primer usuario inicio sesion y desde staff reenvio invitación
     And I wait for 2 seconds
     When I enter password "<PASSWORD1>"
     And I wait for 2 seconds
-    And I click next
+    And I click Sign In
     And I wait for 2 seconds
     And I click Staff
     And I click Resend

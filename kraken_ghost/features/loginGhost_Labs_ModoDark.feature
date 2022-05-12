@@ -9,7 +9,7 @@ Scenario: Como primer usuario inicio sesion y desde Labs cambio la apariencia a 
     And I wait for 2 seconds
     When I enter password "<PASSWORD1>"
     And I wait for 2 seconds
-    And I click next
+    And I click Sign In
     And I wait for 5 seconds
     And I click Labs
     And I click change Night shift

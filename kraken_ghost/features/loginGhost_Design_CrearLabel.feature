@@ -9,9 +9,12 @@ Scenario: Como primer usuario inicio sesion y desde Labs activo la opción Membe
     And I wait for 2 seconds
     When I enter password "<PASSWORD1>"
     And I wait for 2 seconds
-    And I click next
+    And I click Sign In
     And I wait for 5 seconds
     And I click option Design for label
     And I wait for 5 seconds
-    And I type the text "Prueba"
-    And I save information
+    And I click on the image
+    And I wait for 5 seconds
+    And I close session
+    And I wait for 3 seconds
+    And I click option Sign Out
