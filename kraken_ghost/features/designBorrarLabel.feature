@@ -2,7 +2,7 @@ Feature: Login - Design - Borrar Label - Save - Logout
 
 @user1 @web
 
-Scenario: Como primer usuario inicio sesion
+Scenario: Login Design BorrarLabel Save Logout
     Given I navigate to page "http://localhost:2368/ghost/"
     And I wait for 3 seconds
     When I enter email "<USERNAME1>"

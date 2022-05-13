@@ -1,8 +1,7 @@
 Feature: Login - Cuenta - Cambiar nombre - Save - Logout
 
 @user1 @web
-
-Scenario: Como primer usuario inicio sesion
+Scenario: Login Cambiar Nombre Save Logout
     Given I navigate to page "http://localhost:2368/ghost/"
     And I wait for 3 seconds
     When I enter email "<USERNAME1>"
@@ -11,7 +10,6 @@ Scenario: Como primer usuario inicio sesion
     And I wait for 2 seconds
     And I click Sign In
     And I wait for 1 seconds
-    
     And I click on profile
     And I wait for 1 seconds
     And I click on Your Profile

@@ -1,4 +1,4 @@
-const { Given, When, Then, browser } = require('@cucumber/cucumber');
+const { Given, When, Then} = require('@cucumber/cucumber');
 const expect = require('chai').expect;
 
 let globalText = "";
@@ -201,14 +201,3 @@ Then('I search post title {kraken-string}', async function (postTitle) {
     let element2 = await this.driver.$('div.fullscreen-modal-background');
 });
 
-/*
-Then('I click on the redact message inputbox', async function () {
-    let element = await this.driver.$("p.kvgmc6g5");
-    return await element.click();
-
-  });
-
-  Then('I send the message', async function () {
-    let element = await this.driver.$("span.tojvnm2t:nth-child(3) > div:nth-child(1)");
-    return await element.click();
-  });*/
