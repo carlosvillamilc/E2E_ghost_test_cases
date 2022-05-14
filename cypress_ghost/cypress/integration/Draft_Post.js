@@ -21,9 +21,9 @@ describe('Draft post', () => {
         cy.get('#ember10').type(password)
         cy.get('#ember12').click()        
         cy.url().should('eq', 'http://localhost:2368/ghost/#/site')
-        cy.get('a[href="#/posts/"]').eq(0).click();    
+        cy.get('a[href="#/posts/"]').eq(0).click()   
         cy.wait(500)
-        cy.get('a[href="#/posts/?type=draft"]').eq(0).click();  
+        cy.get('a[href="#/posts/?type=draft"]').eq(0).click() 
         cy.get('a[class="ember-view permalink gh-list-data gh-post-list-featured"]').click()
         cy.get('[placeholder="Post Title"]').type(postTitle)
         cy.wait(100)
