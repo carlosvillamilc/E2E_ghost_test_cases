@@ -2,6 +2,14 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 var {browser} = require('cucumber')
 
 let globalText = "";
+
+Given(' navigate to page {url}', async() => {
+    browser.url('/uniandes/');
+    if($('button=Cerrar').isDisplayed()) {
+      $('button=Cerrar').click();
+    }
+  });
+
 When('I enter email {kraken-string}', async function (email) {
     let element = await this.driver.$('#ember8');
     return await element.setValue(email);
@@ -61,7 +69,7 @@ Then('I check Navigation Text on site', async function () {
     let element = await this.driver.$("//*[text()='Test']")});
 
 When('I click Staff', async function() {
-    let element = await this.driver.$('#ember39');
+    let element = await this.driver.$('*=Staff');
     return await element.click();
 })
 
@@ -91,7 +99,7 @@ When('I close session', async function() {
 })
 
 When('I click option Sign Out', async function() {
-    let element = await this.driver.$('=Sign Out');
+    let element = await this.driver.$('.dropdown-item.user-menu-signout.ember-view');
     element.click();
 })
 
