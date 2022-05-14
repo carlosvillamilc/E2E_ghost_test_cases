@@ -1,0 +1,33 @@
+Feature: Login - Design - Borrar Label - Save - Logout
+
+@user1 @web
+
+Scenario: Como primer usuario inicio sesion
+    Given I navigate to page "http://localhost:2368/ghost/"
+    And I wait for 3 seconds
+    When I enter email "<USERNAME1>"
+    And I wait for 2 seconds
+    When I enter password "<PASSWORD1>"
+    And I wait for 2 seconds
+    And I click Sign In
+    And I wait for 1 seconds
+    And I click on View Site
+    And I wait for 1 seconds
+    And I click on Suscribe
+    And I wait for 1 seconds
+    And I enter email to suscribe "<SUSCRIBEEMAIL>"
+    
+    And I wait for 1 seconds
+    And I check Navigation Text
+    And I wait for 1 seconds
+    #And I check Navigation Text on site
+    #And I wait for 1 seconds
+
+    And I delete first design navigation item
+    And I wait for 1 seconds
+    And I click on Save
+    And I wait for 1 seconds
+    
+    And I click on profile
+    And I wait for 1 seconds
+    And I click Sign Out
