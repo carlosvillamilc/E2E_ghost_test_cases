@@ -3,7 +3,7 @@
 ## Casos de Prueba
 
 | No. | Nombre | Descripción | Responsable |
-| ----- | --------- | ----------- |
+| ----- | --------- | ----------- | ----------- |
 | CP-001 |  Staff Invitar Personas. | Iniciar sesión en Ghost, dar click en el modulo de Staff, dar click en el botón de invitar personas, ingresar un correo de usuario, dar click en el botón de enviar, cerrar el modal, refrescar página y validar que el usuario se encuentra en la lista de invitaciones. Click en la opción de salir de ghost. | Alexander Yirsa |
 | CP-002 |  Staff Reenviar Invitación Personas. | Iniciar sesión en Ghost, dar click en el modulo de Staff, dar click en la opción de Resend, validar texto de reenvio de invitación, refrescar página y validar que el usuario se encuentra en la lista de invitaciones. Click en la opción de salir de ghost. | Alexander Yirsa |
 | CP-003 |  Staff Revocar Invitación Personas. | Iniciar sesión en Ghost, dar click en el modulo de Staff, dar click en la opción de Revoke, validar texto de invitación Revocada, refrescar página y validar que el usuario ya no se encuentra en la lista de invitaciones. Click en la opción de salir de ghost.| Alexander Yirsa |
