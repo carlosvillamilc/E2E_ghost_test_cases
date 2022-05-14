@@ -9,7 +9,6 @@ Given(' navigate to page {url}', async() => {
       $('button=Cerrar').click();
     }
   });
-
 When('I enter email {kraken-string}', async function (email) {
     let element = await this.driver.$('#ember8');
     return await element.setValue(email);
@@ -86,42 +85,35 @@ When('I enter invited email', async function () {
 When('I click button invited', async function() {
     let element = await this.driver.$('button=Send invitation now');
     element.click();
-})
+});
 
 When('I click close popup Invite a New User', async function() {
     let element = await this.driver.$('.close');
     element.click();
-})
+});
 
 When('I close session', async function() {
     let element = await this.driver.$('.gh-user-email');
     element.click();
-})
+});
 
 When('I click option Sign Out', async function() {
     let element = await this.driver.$('.dropdown-item.user-menu-signout.ember-view');
     element.click();
-})
+});
 
-/*
-Then('I click on the first conversation', async function () {
-    let element = await this.driver.$(".i224opu6 > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)");
-
+Then('I click on New Post', async function () {   
+    let element = await this.driver.$(`a[href="#/editor/post/"]`);    
     return await element.click();
 });
 
-Then('I delete first design navigation item', async function () {
-    let element = await this.driver.$("/html/body/div[2]/div/main/section/section/div[2]/form/div[1]/div[1]/div/button");
-    return await element.click();
+Then('I enter entre post title {kraken-string}', async function (postTitle) {
+    let element = await this.driver.$('[placeholder="Post Title"]')
+    return await element.setValue(postTitle);
 });
 
-Then('I click on Save', async function () {
-    let element = await this.driver.$("/html/body/div[2]/div/main/section/header/section/button");
-    return await element.click();
-});
-
-Then('I click on profile', async function () {
-    let element = await this.driver.$("#ember48");
+Then('I click on Publish', async function () {   
+    let element = await this.driver.$('.gh-btn gh-btn-outline');    
     return await element.click();
 });
 
@@ -130,32 +122,3 @@ Then('I click Sign Out', async function () {
     let element = await this.driver.$('=Sign Out');
     return await element.click();
 });
-
-Then('I click on Posts', async function () {   
-    let element = await this.driver.$(`a[href="#/posts/"]`);    
-    return await element.click();
-});
-
-Then('I click on New Post', async function () {   
-    let element = await this.driver.$(`a[href="#/editor/post/"]`);    
-    return await element.click();
-});
-Then('I enter entre post title {kraken-string}', async function (postTitle) {
-    let element = await this.driver.$('[placeholder="Post Title"]')
-    return await element.setValue(postTitle);
-});
-Then('I click on Publish', async function () {   
-    let element = await this.driver.$('.gh-btn gh-btn-outline');    
-    return await element.click();
-});
-
-Then('I click on the redact message inputbox', async function () {
-    let element = await this.driver.$("p.kvgmc6g5");
-    return await element.click();
-
-  });
-
-  Then('I send the message', async function () {
-    let element = await this.driver.$("span.tojvnm2t:nth-child(3) > div:nth-child(1)");
-    return await element.click();
-  });*/
