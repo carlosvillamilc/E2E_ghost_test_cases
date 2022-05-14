@@ -42,5 +42,6 @@ describe('New post', () => {
         cy.get('div[class="flex-auto flex items-center"]').click()
         cy.wait(100);
         cy.get('a[href="#/signout/"]').click()  
+        
     })
   })
