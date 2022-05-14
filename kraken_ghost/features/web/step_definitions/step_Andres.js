@@ -3,12 +3,12 @@ var {browser} = require('cucumber')
 
 
 When('I enter new post content {kraken-string}', async function (content) {
-    let element = await this.driver.$('[data-placeholder="Begin writing your post..."]')
+    let element = await this.driver.$('*="Begin writing your post..."')
     return await element.setValue(content);
 });
 
-When('I click on Publish', async function(){
-    let element = await this.driver.$('div[class="ember-view.ember-basic-dropdown-trigger.gh-btn.h-btn-outline.gh-publishmenu-trigger"]')
+When('I click on Publish button', async function(){
+    let element = await this.driver.$('span=Publish')
     return await element.click();
 });
 
@@ -18,12 +18,12 @@ When('I click on Drafts', async function(){
 });
 
 When('I enter to first draft', async function(){
-    let element = await this.driver.$('a[class="ember-view.permalink.gh-list-data.gh-post-list-featured"]')
+    let element = await this.driver.$('.ember-view.permalink.gh-list-data.gh-post-list-title');
     return await element.click();
 });
 
 When('I click on Publish option', async function(){
-    let element = await this.driver.$('button[class="gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view"]')
+    let element = await this.driver.$('.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view')
     return await element.click();
 });
 
