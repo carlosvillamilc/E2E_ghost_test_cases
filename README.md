@@ -30,6 +30,18 @@ Luego de tener instaladas las dos imagenes de docker se debe ejecutar el comando
     * Desde la pantalla que se abre, ubique los test que se encuentran en la carpeta integration y seleccione el que desea correr para ver los
       resultados de la ejecución.
     
+## Casos seleccionados para realizar el VRT:
+
+    - Nuevo Post.
+    - Volver a postear un Post.
+    - Publicar un Draft.
+    - Crear una nueva página.
+    - Borrar una página.
+    - Cambiar estilo de Ghost a modo Dark y vsa.
+    - Enviar una invitación a un usuario.
+    - Reenviar una invitación a un usuario.
+    - Cambiar nombre de usurio.
+    - Buscar un usuario creado.
 
 
 ## E2E_ghost_test_cases
