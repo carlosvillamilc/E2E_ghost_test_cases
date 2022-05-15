@@ -1,4 +1,5 @@
 const { Given, When, Then} = require('@cucumber/cucumber');
+
 const expect = require('chai').expect;
 
 let globalText = "";
@@ -123,13 +124,6 @@ When('I click option Sign Out', async function() {
     element.click();
 })
 
-/*
-Then('I click on the first conversation', async function () {
-    let element = await this.driver.$(".i224opu6 > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)");
-
-    return await element.click();
-});
-*/
 Then('I delete first design navigation item', async function () {
     let element = await this.driver.$("/html/body/div[2]/div/main/section/section/div[2]/form/div[1]/div[1]/div/button");
     return await element.click();
