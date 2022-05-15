@@ -1,6 +1,54 @@
-# E2E_ghost_test_cases
+# Paso a Paso para ejecutar el programa
 
-## Casos de Prueba
+1. Realizar la instalación de Docker:
+* 		En este link buscan su sistema operativo e instalan el Docker -> https://docs.docker.com/desktop/mac/install/
+Ejecutar los siguientes comandos para instalar las imágenes necesarias para correr las dos versiones de Ghost
+* 		docker run -d -e url=http://localhost:3001 -p 3001:2368 --name ghost_3.42 ghost:3.41.1
+Ese contenedor va a enviar información desde su puerto 2368 (que es el que utiliza Ghost) a el puerto 3001 (en este ejemplo) en nuestro computador
+*       docker run -d -e url=http://localhost:3002 -p 3002:2369 --name ghost_4.44.0 ghost:4.44.0
+Ese contenedor va a enviar información desde su puerto 2369 (que es el que utiliza Ghost) a el puerto 3002 (en este ejemplo) en nuestro computador.
+
+Luego de tener instaladas las dos imagenes de docker se debe ejecutar el comando 
+
+* Docker start <ID-contenedor>, por ejemplo: docker start 9f1445846454. Lo anterior se debe realizar para las dos imagenes que se crearon previamente.
+
+2. Ingresar a las url de ghost desde un browser. http://localhost:3001/ghost/#/dashboard (Ghost V3.41.1) y http://localhost:3002/ghost/#/dashboard (Ghost V4.44.0).
+
+3. Ingresar a Ghost y crear un usuario y contraseña el cual debe ser exactamente igual para ambas versiones.
+
+4. Dirigirse al archivo properties.json y cambiar el valor establecido por el generado por usted así: 
+    "USERNAME1": "correo@generado",
+    "PASSWORD1": "claveGenerada",
+
+5. Para ejecutar el comando que corre las pruebas en Kraken:
+    * Desde la terminal ubiquese en el carpeta de Kraken_ghost.
+    * Desdde la terminal ejecute el siguiente comando: npx kraken-node run
+
+6. Para ejecutar el comando que corre las pruebas en Cypress:
+    * Desde la terminal ubiquese en la carpeta de Cypress
+    * Desde la terminal ejecute el siguiente comando: npx cypress open
+    * Desde la pantalla que se abre, ubique los test que se encuentran en la carpeta integration y seleccione el que desea correr para ver los
+      resultados de la ejecución.
+    
+## Casos seleccionados para realizar el VRT:
+
+    - Nuevo Post.
+    - Volver a postear un Post.
+    - Publicar un Draft.
+    - Crear una nueva página.
+    - Borrar una página.
+    - Cambiar estilo de Ghost a modo Dark y vsa.
+    - Enviar una invitación a un usuario.
+    - Reenviar una invitación a un usuario.
+    - Cambiar nombre de usurio.
+    - Buscar un usuario creado.
+
+## Pros y Contras de las herramientas:
+
+    * Dirigirse a la wiki del proyecto.
+
+
+## E2E_ghost_test_cases
 
 | No. | Nombre | Descripción | Responsable | Precondiciones |
 | ----- | --------- | ----------- | ----------- | --------------- |
