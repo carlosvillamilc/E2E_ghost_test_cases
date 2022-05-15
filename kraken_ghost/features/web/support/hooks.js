@@ -3,7 +3,7 @@ const { After, Before, AfterStep, BeforeStep, scenario } = require('@cucumber/cu
 const { WebClient } = require('kraken-node');
 
 let fs = require('fs');
-let dir = './vrt/screenshots';
+let dir = './vrt/';
 let scenarioCounter = 1;
 let path = '';
 

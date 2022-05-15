@@ -2,7 +2,7 @@ Feature: Login - Cuenta - Cambiar nombre - Save - Logout
 
 @user1 @web
 Scenario: Login Cambiar Nombre Save Logout
-    Given I navigate to page "http://localhost:2368/ghost/"
+    Given I navigate to page "http://localhost:3002/ghost/"
     And I wait for 3 seconds
     When I enter email "<USERNAME1>"
     And I wait for 2 seconds
