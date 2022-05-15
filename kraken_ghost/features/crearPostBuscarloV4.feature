@@ -3,8 +3,8 @@ Feature: Login - Cuenta - Cambiar nombre - Save - Logout
 
 @user1 @web
 
-Scenario: Login CrearPost Buscarlo Logout V3
-    Given I navigate to page "http://localhost:3001/ghost/"
+Scenario: Login CrearPost Buscarlo Logout V4
+    Given I navigate to page "http://localhost:3002/ghost/"
     And I wait for 3 seconds
     When I enter email "<USERNAME1>"
     And I wait for 2 seconds
@@ -21,13 +21,13 @@ Scenario: Login CrearPost Buscarlo Logout V3
     And I wait for 1 seconds
     And I click on Publish
     And I wait for 1 seconds
-    And I click on Publish confirm
+    And I click on Publish confirm v4
     And I wait for 1 seconds
     And I click on Posts
     And I wait for 1 seconds
     And I click on search option
     And I wait for 1 seconds
-    And I search post title "<POSTTITLE>"    
+    And I search post title "<POSTTITLE>" v4    
     
     And I wait for 1 seconds
     And I click on Posts

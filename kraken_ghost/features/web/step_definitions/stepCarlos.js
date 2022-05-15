@@ -191,6 +191,14 @@ Then('I click on Publish confirm', async function () {
     return await element2.click(); 
 });
 
+Then('I click on Publish confirm v4', async function () {   
+    let element = await this.driver.$('button[class="gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view"]');    
+    await element.click(); 
+
+    let element2 = await this.driver.$('button[class="gh-btn gh-btn-black gh-btn-icon ember-view"]');    
+    return await element2.click(); 
+});
+
 Then('I click on search option', async function () {   
     let element = await this.driver.$('button[class="gh-nav-btn-search"]');    
     return await element.click();    
@@ -203,3 +211,9 @@ Then('I search post title {kraken-string}', async function (postTitle) {
     let element2 = await this.driver.$('div.fullscreen-modal-background');
 });
 
+Then('I search post title {kraken-string} v4', async function (postTitle) {
+    let element = await this.driver.$('input[class="gh-input-with-select-input"]');
+    await element.setValue(postTitle);    
+    expect(String(await element.getValue())).to.equal(postTitle);
+    let element2 = await this.driver.$('div.fullscreen-modal-background');
+});

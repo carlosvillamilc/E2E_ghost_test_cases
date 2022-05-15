@@ -41,15 +41,9 @@ AfterStep(async function () {
   path = `./${dir}/${featureName}/${featureName}-${scenarioCounter}.png`;
   scenarioCounter++;
   try {
-      console.log(path, scenarioCounter);      
+      console.log(path, scenarioCounter);
       let screenshot = await this.driver.saveScreenshot(path);
-      this.attach(screenshot, 'image/png');
-      if(path.includes("V3")){
-        imagesPathv3.push(path);
-      }
-      else if(path.includes("V4")){
-        imagesPathv4.push(path);
-      }
+      this.attach(screenshot, 'image/png');            
       
   } catch {
       console.log("KRAKEN: Could not take screenshot");
