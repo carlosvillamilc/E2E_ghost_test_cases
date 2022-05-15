@@ -78,9 +78,17 @@ When('I click Invite people', async function() {
 })
 
 When('I enter invited email', async function () {
+    var numero = getRandomArbitrary(0, 100);
+        numero = Math.round(numero);
+        var emailPart1 = 'yirzajes';
+        var emailPart2 = '@gmail.com'
     let element = await this.driver.$('#new-user-email');
-    return await element.setValue("yirzajes@gmail.com");
+    return await element.setValue(emailPart1+numero+emailPart2);
 });
+
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+  }
 
 When('I click button invited', async function() {
     let element = await this.driver.$('button=Send invitation now');

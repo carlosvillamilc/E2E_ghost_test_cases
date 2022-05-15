@@ -17,3 +17,7 @@ Scenario: Como usuario inicio sesion para revocar invitación en Ghost V4
     When I click Revoke
     And I wait for 2 seconds
     Then I see the message revoked Invited Ghost V4
+    And I wait for 1 seconds
+    And I close session ghost V4
+    And I click option Sign Out Ghost V4
+    And I wait for 3 seconds
