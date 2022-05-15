@@ -174,7 +174,7 @@ Then('I click on New Post', async function () {
     return await element.click();
 });
 Then('I enter post title {kraken-string}', async function (postTitle) {
-    let element = await this.driver.$('[placeholder="Post Title"]')    
+    let element = await this.driver.$('textArea[class="gh-editor-title ember-text-area gh-input ember-view"]')    
     await element.setValue(postTitle);
     let element2 = await this.driver.$('[data-placeholder="Begin writing your post..."]')    
     await element2.click();
@@ -182,9 +182,12 @@ Then('I enter post title {kraken-string}', async function (postTitle) {
 });
 
 Then('I click on Publish', async function () {   
-    let element = await this.driver.$('div[class="ember-view ember-basic-dropdown-trigger  gh-btn gh-btn-outline gh-publishmenu-trigger"]');    
-    await element.click();
-    let element2 = await this.driver.$('button[class="gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view"]');    
+    let element = await this.driver.$('div[class*="ember-view ember-basic-dropdown-trigger"]');    
+    return await element.click();
+});
+
+Then('I click on Publish confirm', async function () {   
+    let element2 = await this.driver.$('button[class*="gh-publishmenu-button gh-btn-icon ember-view"]');    
     return await element2.click(); 
 });
 

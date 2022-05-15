@@ -13,6 +13,7 @@
     "chai": "^4.3.6",
     "kraken-node": "^1.0.24",
     "puppeteer": "^14.0.0",
+    "resemblejs": "^4.1.0",
     "wdio-tesults-service": "^1.1.1"
   },
   "devDependencies": {
