@@ -43,6 +43,10 @@ Luego de tener instaladas las dos imagenes de docker se debe ejecutar el comando
     - Cambiar nombre de usurio.
     - Buscar un usuario creado.
 
+## Pros y Contras de las herramientas:
+
+    * Dirigirse a la wiki del proyecto.
+
 
 ## E2E_ghost_test_cases
 
