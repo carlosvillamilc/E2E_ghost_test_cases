@@ -4,7 +4,7 @@ Feature: Hacer Login en Ghost y cambiar apariencia de ghost
 
 Scenario: Scenario6 V4
     Given I navigate to page "http://localhost:3002/ghost/#/signin"
-    When I enter email "<USERNAME2>"
+    When I enter email "<USERNAME1>"
     When I enter password Ghost V4 "<PASSWORD1>"
     And I click Sign In Ghost V4
     And I wait for 2 seconds
