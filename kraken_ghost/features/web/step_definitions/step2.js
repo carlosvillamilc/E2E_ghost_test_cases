@@ -1,6 +1,5 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-var {browser} = require('cucumber')
-var { document} = require('cucumber')
+
 
 When('I click Resend', async function() {
     const link = await this.driver.$("*= Resend")

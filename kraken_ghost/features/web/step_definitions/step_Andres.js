@@ -1,5 +1,4 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-var {browser} = require('cucumber')
 
 
 When('I enter new post content {kraken-string}', async function (content) {
@@ -8,7 +7,7 @@ When('I enter new post content {kraken-string}', async function (content) {
 });
 
 When('I click on Publish button', async function(){
-    let element = await this.driver.$('span=Publish')
+    let element = await this.driver.$('div[class="ember-view ember-basic-dropdown-trigger  gh-btn gh-btn-outline gh-publishmenu-trigger"]')
     return await element.click();
 });
 
@@ -64,6 +63,11 @@ When('I click on Scheduled New post', async function(){
 
 When('I click Post', async function(){
     let element = await this.driver.$('a[href="#/posts/"]')
+    return await element.click();
+});
+
+When('I click Post Draft', async function(){
+    let element = await this.driver.$('a[href="#/posts/?type=draft"]')
     return await element.click();
 });
 

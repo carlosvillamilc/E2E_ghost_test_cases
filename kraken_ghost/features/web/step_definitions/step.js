@@ -1,14 +1,7 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-var {browser} = require('cucumber')
 
 let globalText = "";
 
-Given(' navigate to page {url}', async() => {
-    browser.url('/uniandes/');
-    if($('button=Cerrar').isDisplayed()) {
-      $('button=Cerrar').click();
-    }
-  });
 When('I enter email {kraken-string}', async function (email) {
     let element = await this.driver.$('#ember8');
     return await element.setValue(email);
@@ -102,14 +95,18 @@ When('I click option Sign Out', async function() {
     element.click();
 });
 
-Then('I click on New Post', async function () {   
-    let element = await this.driver.$(`a[href="#/editor/post/"]`);    
-    return await element.click();
+Then('I enter page title {kraken-string}', async function (postTitle) {
+    let element = await this.driver.$('[placeholder="Page Title"]')
+    await element.setValue(postTitle);
+    let element2 = await this.driver.$('[data-placeholder="Begin writing your page..."]')
+    return await element2.setValue(postTitle);
 });
 
-Then('I enter entre post title {kraken-string}', async function (postTitle) {
+Then('I enter post title {kraken-string}', async function (postTitle) {
     let element = await this.driver.$('[placeholder="Post Title"]')
-    return await element.setValue(postTitle);
+    await element.setValue(postTitle);
+    let element2 = await this.driver.$('[data-placeholder="Begin writing your post..."]')
+    return await element2.setValue(postTitle);
 });
 
 Then('I click on Publish', async function () {   
@@ -119,6 +116,12 @@ Then('I click on Publish', async function () {
 
 Then('I click Sign Out', async function () {
     //let element = await this.driver.$("#ember70");
-    let element = await this.driver.$('=Sign Out');
+    let element = await this.driver.$(`a[href="#/signout/"]`);
+    return await element.click();
+});
+
+Then('I click on profile', async function () {
+    //let element = await this.driver.$(".gh-nav-bottom");
+    let element = await this.driver.$("div.gh-user-avatar.relative");
     return await element.click();
 });

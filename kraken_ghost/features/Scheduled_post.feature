@@ -1,3 +1,4 @@
+
 Feature: Hacer un Post en Ghost
 
 @user1 @web
@@ -9,20 +10,21 @@ Scenario: Como primer usuario inicio sesion
     When I enter password "<PASSWORD1>"
     And I wait for 2 seconds
     And I click Sign In
-    
+
     And I click Post
     And I wait for 2 seconds
-    And I click on Drafts
+    And I click on Scheduled
     And I wait for 2 seconds
-    And I enter to first draft
+    And I click on New Post
+    And I wait for 2 seconds
     And I enter post title "<POSTTITLE>"
     And I wait for 2 seconds
     And I click on Publish button
     And I click on Publish option
-    
+   
     And I wait for 5 seconds
     
-    And I click Post Draft
+    And I click on Scheduled
     
     And I wait for 1 seconds
     And I click on profile
