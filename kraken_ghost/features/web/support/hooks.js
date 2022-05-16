@@ -1,11 +1,10 @@
 const { After, Before, AfterStep, BeforeStep, AfterAll, scenario } = require('@cucumber/cucumber');
-const compareImages = require("resemblejs/compareImages")
 
 //const { defineSupportCode } = require('cucumber');
 const { WebClient } = require('kraken-node');
 
 let fs = require('fs');
-let dir = './vrt';
+let dir = '../vrt';
 let scenarioCounter = 1;
 let path = '';
 
@@ -34,11 +33,12 @@ After(async function() {
 
 AfterStep(async function () {
   folderPath = `./${dir}/${featureName}`;
-  if (!fs.existsSync(folderPath)){
-    fs.mkdirSync(folderPath);
+  uniqueFolderPath = folderPath.slice(0, -3);
+  if (!fs.existsSync(uniqueFolderPath)){
+    fs.mkdirSync(uniqueFolderPath);
   }
   
-  path = `./${dir}/${featureName}/${featureName}-${scenarioCounter}.png`;
+  path = `./${uniqueFolderPath}/${featureName}-${scenarioCounter}.png`;
   scenarioCounter++;
   try {
       console.log(path, scenarioCounter);

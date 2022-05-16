@@ -3,7 +3,7 @@ Feature: Login - Design - Borrar Label - Save - Logout
 @user1 @web
 
 Scenario: Login Design BorrarLabel Save Logout
-    Given I navigate to page "http://localhost:2368/ghost/"
+    Given I navigate to page "http://localhost:3001/ghost/"
     And I wait for 3 seconds
     When I enter email "<USERNAME1>"
     And I wait for 2 seconds

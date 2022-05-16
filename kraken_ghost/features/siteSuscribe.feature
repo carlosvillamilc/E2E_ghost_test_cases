@@ -3,7 +3,7 @@ Feature: Subscribe - Email - Subscribe - X
 @user1 @web
 
 Scenario: Pagina Suscribe Error
-    Given I navigate to page "http://localhost:2368/"
+    Given I navigate to page "http://localhost:3001/"
     And I wait for 2 seconds
     And I click on Suscribe
     And I wait for 1 seconds
@@ -12,5 +12,3 @@ Scenario: Pagina Suscribe Error
     And I check subscribe error
     And I wait for 1 seconds
     And I click on X button
-    
-    

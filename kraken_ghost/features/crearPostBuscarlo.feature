@@ -3,7 +3,7 @@ Feature: Login - Cuenta - Cambiar nombre - Save - Logout
 
 @user1 @web
 
-Scenario: Login CrearPost Buscarlo Logout V3
+Scenario: Scenario10 V3
     Given I navigate to page "http://localhost:3001/ghost/"
     And I wait for 3 seconds
     When I enter email "<USERNAME1>"
