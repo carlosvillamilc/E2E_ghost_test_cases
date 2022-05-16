@@ -1,6 +1,7 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
 
+
 When('I enter new post content {kraken-string}', async function (content) {
     let element = await this.driver.$('*="Begin writing your post..."')
     return await element.setValue(content);
