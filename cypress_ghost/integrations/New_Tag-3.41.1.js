@@ -11,7 +11,7 @@ describe('Delete page', () => {
             inviteUser = data.inviteUser
             postTitle = data.postTitle
         })
-        cy.visit('http://localhost:2368/ghost/')
+        cy.visit('http://localhost:3001/ghost/')
         cy.wait(2000)        
         
     })
