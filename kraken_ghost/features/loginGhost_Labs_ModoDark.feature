@@ -2,7 +2,7 @@ Feature: Hacer Login en Ghost y cambiar apariencia de ghost
 
 @user1 @web
 
-Scenario: Como usuario inicio sesion y desde Labs cambio la apariencia a Dark Ghost V3
+Scenario: Scenario6 V3
     Given I navigate to page "http://localhost:2369/ghost/#/signin"
     And I wait for 1 seconds
     When I enter email "<USERNAME1>"

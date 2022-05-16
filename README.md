@@ -29,20 +29,26 @@ Luego de tener instaladas las dos imagenes de docker se debe ejecutar el comando
     * Desde la terminal ejecute el siguiente comando: npx cypress open
     * Desde la pantalla que se abre, ubique los test que se encuentran en la carpeta integration y seleccione el que desea correr para ver los
       resultados de la ejecución.
+
+7. Para ejecutar las pruebas de VRT es necesario que se instalen las dependencias del Resemble.js con el comando "npm install resemblejs"
+8. Ejecutar el comando "node index.js"
     
 ## Casos seleccionados para realizar el VRT:
 
-    - Nuevo Post.
-    - Volver a postear un Post.
-    - Publicar un Draft.
-    - Crear una nueva página.
-    - Borrar una página.
-    - Cambiar estilo de Ghost a modo Dark y vsa.
-    - Enviar una invitación a un usuario.
-    - Reenviar una invitación a un usuario.
-    - Cambiar nombre de usurio.
-    - Buscar un usuario creado.
+    - Nuevo Post. (Scenario1) ejecutado con Cypress
+    - Volver a postear un Post. (Scenario2) ejecutado con Cypress
+    - Publicar un Draft. (Scenario3) ejecutado con Cypress
+    - Crear una nueva página. (Scenario4) ejecutado con Cypress
+    - Borrar una página. (Scenario5) ejecutado con Cypress
+    - Cambiar estilo de Ghost a modo Dark y vsa. (Scenario6) ejecutado con Kraken
+    - Enviar una invitación a un usuario. (Scenario7) ejecutado con Kraken
+    - Reenviar una invitación a un usuario. (Scenario8) ejecutado con Kraken
+    - Cambiar nombre de usurio. (Scenario9) ejecutado con Kraken
+    - Buscar un Post creado. (Scenario10) ejecutado con Kraken
 
+## Nota: 
+    - Los ScreenShot de las pantallas quedan almacenadas en la carpeta que se crea automáticamente llamada vrt.
+    
 ## Pros y Contras de las herramientas:
 
     * Dirigirse a la wiki del proyecto.

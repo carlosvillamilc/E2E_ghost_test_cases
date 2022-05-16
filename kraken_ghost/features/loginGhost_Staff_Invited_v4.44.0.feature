@@ -2,7 +2,7 @@ Feature: Hacer Login en Ghost e ingresar a Staff a invitar personas
 
 @user1 @web
 
-Scenario: Como usuario inicio sesion y envío la invitación a un usuario en Ghost V4
+Scenario: Scenario7 V4
     Given I navigate to page "http://localhost:3002/ghost/#/signin"
     And I wait for 1 seconds
     When I enter email "<USERNAME2>"

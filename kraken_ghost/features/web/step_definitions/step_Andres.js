@@ -76,4 +76,3 @@ When('I click on Published', async function(){
     let element = await this.driver.$('a[href="#/posts/?type=published"]')
     return await element.click();
 });
-
