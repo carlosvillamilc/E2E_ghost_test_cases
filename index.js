@@ -11,8 +11,8 @@ async function executeTest(){
     for(let folderindex = 0 ; folderindex < folders.length; folderindex++){
         for(let imageIndex = 1 ; imageIndex <= folders[folderindex]; imageIndex++ ){
             const data = await compareImages(
-                fs.readFileSync(folderName + (folderindex +1) + imageName + imageIndex + 'V3-'+ imageIndex +'.png'),
-                fs.readFileSync(folderName + (folderindex +1) + imageName + imageIndex + 'V4-'+ imageIndex +'.png'),
+                fs.readFileSync(folderName + (folderindex +1) + imageName + imageIndex + '_V3-'+ imageIndex +'.png'),
+                fs.readFileSync(folderName + (folderindex +1) + imageName + imageIndex + '_V4-'+ imageIndex +'.png'),
                 options
             );
             resultInfo[imageIndex] = {
@@ -23,7 +23,7 @@ async function executeTest(){
                 diffBounds: data.diffBounds,
                 analysisTime: data.analysisTime
             }
-            fs.writeFileSync(folderName + (folderindex +1) +'/'+ imageName + imageIndex +'Compare-' + imageIndex +'.png', data.getBuffer());
+            fs.writeFileSync(folderName + (folderindex +1) +'/'+ imageName + imageIndex + 'Compare-' + imageIndex +'.png', data.getBuffer());
         }
         resultInfoTotal.push(resultInfo);
     }

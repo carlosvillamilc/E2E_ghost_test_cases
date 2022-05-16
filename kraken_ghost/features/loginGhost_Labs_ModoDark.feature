@@ -3,7 +3,7 @@ Feature: Hacer Login en Ghost y cambiar apariencia de ghost
 @user1 @web
 
 Scenario: Scenario6 V3
-    Given I navigate to page "http://localhost:2369/ghost/#/signin"
+    Given I navigate to page "http://localhost:3001/ghost/#/signin"
     And I wait for 1 seconds
     When I enter email "<USERNAME1>"
     When I enter password "<PASSWORD1>"
