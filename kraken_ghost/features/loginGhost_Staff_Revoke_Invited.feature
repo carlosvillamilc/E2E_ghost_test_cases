@@ -2,7 +2,7 @@ Feature: Hacer Login en Ghost y revocar invitación
 
 @user1 @web
 
-Scenario: Como usuario inicio sesion para revocar invitación en Ghost V3
+Scenario: Scenario8 V3
     Given I navigate to page "http://localhost:2369/ghost/#/signin"
     And I wait for 1 seconds
     When I enter email "<USERNAME1>"

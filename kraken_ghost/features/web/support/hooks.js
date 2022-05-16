@@ -1,9 +1,10 @@
-const { After, Before, AfterStep, BeforeStep, scenario } = require('@cucumber/cucumber');
+const { After, Before, AfterStep, BeforeStep, AfterAll, scenario } = require('@cucumber/cucumber');
+
 //const { defineSupportCode } = require('cucumber');
 const { WebClient } = require('kraken-node');
 
 let fs = require('fs');
-let dir = './vrt';
+let dir = '../vrt';
 let scenarioCounter = 1;
 let path = '';
 
@@ -25,16 +26,25 @@ Before(async function(scenario) {
 After(async function() {
   await this.deviceClient.stopKrakenForUserId(this.userId);
   scenarioCounter= 1;
+
+
 });
 
 
 AfterStep(async function () {
-  path = `./${dir}/${featureName}-${scenarioCounter}.png`;
+  folderPath = `./${dir}/${featureName}`;
+  uniqueFolderPath = folderPath.slice(0, -3);
+  if (!fs.existsSync(uniqueFolderPath)){
+    fs.mkdirSync(uniqueFolderPath);
+  }
+  
+  path = `./${uniqueFolderPath}/${featureName}-${scenarioCounter}.png`;
   scenarioCounter++;
   try {
-      console.log(path, scenarioCounter);      
+      console.log(path, scenarioCounter);
       let screenshot = await this.driver.saveScreenshot(path);
-      this.attach(screenshot, 'image/png');
+      this.attach(screenshot, 'image/png');            
+      
   } catch {
       console.log("KRAKEN: Could not take screenshot");
   }

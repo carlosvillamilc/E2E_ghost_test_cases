@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "kraken-node": "^1.0.24",
+    "resemblejs": "^4.1.0",
     "wdio-tesults-service": "^1.1.1"
   },
   "devDependencies": {
