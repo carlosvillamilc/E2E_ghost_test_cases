@@ -8,11 +8,16 @@ async function executeTest(){
     const folders = [10, 18,15,19,29];
     let folderName ="./vrt/Scenario";
     let imageName ="/Scenario"
-    for(let folderindex = 5 ; folderindex < (folders.length)*2; folderindex++){
-        for(let imageIndex = 1 ; imageIndex <= folders[folderindex]; imageIndex++ ){
+    console.log((folders.length)*2)
+    console.log(folders[1])
+    for(let folderindex = 5 ; folderindex <= (folders.length)*2; folderindex++){
+        console.log("for1")
+        for(let imageIndex = 1 ; imageIndex <= folders[folderindex-5]; imageIndex++ ){
+            console.log("for2")
+            console.log(folderName + (folderindex +1) + imageName + (folderindex+1) + '_V3-'+ imageIndex +'.png')
             const data = await compareImages(
-                fs.readFileSync(folderName + (folderindex +1) + imageName + imageIndex + '_V3-'+ imageIndex +'.png'),
-                fs.readFileSync(folderName + (folderindex +1) + imageName + imageIndex + '_V4-'+ imageIndex +'.png'),
+                fs.readFileSync(folderName + (folderindex +1) + imageName + (folderindex+1) + '_V3-'+ imageIndex +'.png'),
+                fs.readFileSync(folderName + (folderindex +1) + imageName + (folderindex+1) + '_V4-'+ imageIndex +'.png'),
                 options
             );
             resultInfo[imageIndex] = {
