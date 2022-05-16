@@ -5,10 +5,10 @@ const { options } = config;
 async function executeTest(){
     let resultInfo = {}
     let resultInfoTotal = []
-    const folders = [2, 1];
+    const folders = [10, 18,15,19,29];
     let folderName ="./vrt/Scenario";
     let imageName ="/Scenario"
-    for(let folderindex = 0 ; folderindex < folders.length; folderindex++){
+    for(let folderindex = 5 ; folderindex < (folders.length)*2; folderindex++){
         for(let imageIndex = 1 ; imageIndex <= folders[folderindex]; imageIndex++ ){
             const data = await compareImages(
                 fs.readFileSync(folderName + (folderindex +1) + imageName + imageIndex + '_V3-'+ imageIndex +'.png'),
