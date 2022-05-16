@@ -1,14 +1,8 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-var {browser} = require('cucumber')
 
 let globalText = "";
 
-Given(' navigate to page {url}', async() => {
-    browser.url('/uniandes/');
-    if($('button=Cerrar').isDisplayed()) {
-      $('button=Cerrar').click();
-    }
-  });
+
 When('I enter email {kraken-string}', async function (email) {
     let element = await this.driver.$('#ember8');
     return await element.setValue(email);
@@ -26,7 +20,7 @@ When('I click Sign In', async function() {
 
 
 Then('I click on Design', async function () {
-    let element = await this.driver.$("#ember42");    
+    let element = await this.driver.$('a[href="#/settings/design/"]');
     return await element.click();
 });
 
@@ -120,10 +114,10 @@ Then('I enter entre post title {kraken-string}', async function (postTitle) {
     return await element.setValue(postTitle);
 });
 
-Then('I click on Publish', async function () {   
+/*Then('I click on Publish', async function () {   
     let element = await this.driver.$('.gh-btn gh-btn-outline');    
     return await element.click();
-});
+});*/
 
 Then('I click Sign Out', async function () {
     //let element = await this.driver.$("#ember70");

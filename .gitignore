@@ -46,5 +46,9 @@ Thumbs.db
 /kraken_ghost/reports
 /kraken_ghost/node_modules
 
+<<<<<<< HEAD
 # Cypress files
 /cypress_ghost\node_modules
+=======
+/cypress/videos
+>>>>>>> E2E_carlos
