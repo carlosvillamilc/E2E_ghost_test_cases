@@ -14,7 +14,7 @@ Scenario: Como primer usuario inicio sesion y desde staff reenvio invitación
     And I click Staff
     And I click Resend
     And I wait for 2 seconds
-    Then I see the message resend Invited "Sending Invite..."
+    Then I see the message resend Invited
     And I close session
     And I wait for 3 seconds
     And I click option Sign Out
