@@ -1,7 +1,4 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-var {browser} = require('cucumber')
-var { document} = require('cucumber')
-var {setValue} = require('cucumber')
 
 
 When('I click option Design for label', async function() {

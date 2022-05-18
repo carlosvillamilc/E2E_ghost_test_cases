@@ -1,5 +1,5 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-var {browser} = require('cucumber')
+
 
 
 When('I enter new post content {kraken-string}', async function (content) {
@@ -8,7 +8,7 @@ When('I enter new post content {kraken-string}', async function (content) {
 });
 
 When('I click on Publish button', async function(){
-    let element = await this.driver.$('span=Publish')
+    let element = await this.driver.$('div[class="ember-view ember-basic-dropdown-trigger  gh-btn gh-btn-outline gh-publishmenu-trigger"]')
     return await element.click();
 });
 
@@ -67,12 +67,24 @@ When('I click Post', async function(){
     return await element.click();
 });
 
-When('I click on New Post', async function(){
-    let element = await this.driver.$('a[href="#/editor/post/"]')
+When('I click Post Draft', async function(){
+    let element = await this.driver.$('a[href="#/posts/?type=draft"]')
     return await element.click();
 });
+
+/*When('I click on New Post', async function(){
+    let element = await this.driver.$('a[href="#/editor/post/"]')
+    return await element.click();
+});*/
 
 When('I click on Published', async function(){
     let element = await this.driver.$('a[href="#/posts/?type=published"]')
     return await element.click();
+});
+
+Then('I enter page title {kraken-string}', async function (postTitle) {
+    let element = await this.driver.$('[placeholder="Page Title"]')
+    await element.setValue(postTitle);
+    let element2 = await this.driver.$('[data-placeholder="Begin writing your page..."]')
+    return await element2.setValue(postTitle);
 });

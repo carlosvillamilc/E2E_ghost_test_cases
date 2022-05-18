@@ -1,7 +1,6 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-var {browser} = require('cucumber')
-var { document} = require('cucumber')
 const { expect } = require('chai');
+
 
 When('I click Resend', async function() {
     const link = await this.driver.$("*= Resend")
@@ -9,6 +8,12 @@ When('I click Resend', async function() {
     link.click();
 
 })
+
+Then('I see the message resend Invited', async function() {
+    const isDisplayed = await this.driver.$('span=Sending Invite...').isDisplayed();
+    //console.log(isDisplayed);
+    expect(isDisplayed).to.equal(true);
+});
 
 /*When('I see the message resend Invited {kraken-string}', async function (mensaje) {
     let alertText = await this.driver.$('span=Sending Invite...').getText();
@@ -18,9 +23,3 @@ When('I click Resend', async function() {
         console.log("texto no encontrado");
     }
 });*/
-
-Then('I see the message resend Invited', async function() {
-    const isDisplayed = await this.driver.$('span=Sending Invite...').isDisplayed();
-    //console.log(isDisplayed);
-    expect(isDisplayed).to.equal(true);
-});

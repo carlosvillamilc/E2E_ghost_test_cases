@@ -1,5 +1,5 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-var {browser} = require('cucumber')
+
 const { expect } = require('chai');
 
 let globalText = "";

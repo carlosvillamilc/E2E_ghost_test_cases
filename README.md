@@ -1,5 +1,7 @@
 # Paso a Paso para ejecutar el programa
 
+## Porfavor tener en cuenta las precondiciones antes de ejecutar los casos
+
 1. Realizar la instalación de Docker:
 * 		En este link buscan su sistema operativo e instalan el Docker -> https://docs.docker.com/desktop/mac/install/
 Ejecutar los siguientes comandos para instalar las imágenes necesarias para correr las dos versiones de Ghost
