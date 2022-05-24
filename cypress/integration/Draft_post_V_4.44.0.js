@@ -2,7 +2,7 @@ let user = '';
 let password = '';
 let inviteUser='';
 let postTitle= '';
-
+let port = '3002'
 let index = 1;
 
 describe('New post', () => {
@@ -14,7 +14,7 @@ describe('New post', () => {
             inviteUser = data.inviteUser
             postTitle = data.postTitle
         })
-        cy.visit('http://localhost:3002/ghost/')    
+        cy.visit(`http://localhost:${port}/ghost/`)    
     })
 
     it('Login, Test crear Post', () => {       
@@ -29,7 +29,7 @@ describe('New post', () => {
         index++
         cy.wait(100)   
             
-        cy.url().should('eq', 'http://localhost:3002/ghost/#/dashboard')
+        cy.url().should('eq', `http://localhost:${port}/ghost/#/dashboard`)
         cy.get('a[href="#/posts/"]').eq(0).click()   
         cy.screenshot('vrt/Scenario3'  + '/Scenario3' +'_V4-' + index) 
         index++

@@ -3,7 +3,7 @@ let password = '';
 let inviteUser='';
 let postTitle= '';
 let index =1;
-
+let port = '3001'
 describe('Draft post', () => {
     beforeEach(()=>{        
         cy.fixture('ghost.json').as('ghost')
@@ -13,7 +13,7 @@ describe('Draft post', () => {
             inviteUser = data.inviteUser
             postTitle = data.postTitle
         })
-        cy.visit('http://localhost:2368/ghost/')
+        cy.visit(`http://localhost:${port}/ghost/`)
         cy.wait(1000)        
         
     })
@@ -33,7 +33,7 @@ describe('Draft post', () => {
         index++
         cy.wait(100)
                 
-        cy.url().should('eq', 'http://localhost:2368/ghost/#/site')
+        cy.url().should('eq', `http://localhost:${port}/ghost/#/site`)
         cy.get('a[href="#/posts/"]').eq(0).click()
         cy.screenshot('vrt/Scenario3'  + '/Scenario3' +'_V3-' + index) 
         index++
@@ -70,18 +70,18 @@ describe('Draft post', () => {
         cy.wait(100)
 
         cy.get('a[href="#/posts/?type=draft"]').eq(0).click()
-        cy.screenshot('vrt/Scenario3'  + '/Scenario3' +'_V4-' + index) 
+        cy.screenshot('vrt/Scenario3'  + '/Scenario3' +'_V3-' + index) 
         index++
         cy.wait(100)
         cy.reload()
         
         cy.get('div[class="gh-nav-bottom"]').click();
-        cy.screenshot('vrt/Scenario3'  + '/Scenario3' +'_V4-' + index) 
+        cy.screenshot('vrt/Scenario3'  + '/Scenario3' +'_V3-' + index) 
         index++
         cy.wait(100)
 
         cy.get('a[href="#/signout/"]').click();
-        cy.screenshot('vrt/Scenario3'  + '/Scenario3' +'_V4-' + index) 
+        cy.screenshot('vrt/Scenario3'  + '/Scenario3' +'_V3-' + index) 
         index++
         cy.wait(100)   
     })

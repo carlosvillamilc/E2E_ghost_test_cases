@@ -3,7 +3,7 @@ let password = '';
 let inviteUser='';
 let postTitle= '';
 let index = 1;
-
+let port = '3001'
 describe('New post', () => {
     beforeEach(()=>{        
         cy.fixture('ghost.json').as('ghost')
@@ -13,7 +13,7 @@ describe('New post', () => {
             inviteUser = data.inviteUser
             postTitle = data.postTitle
         })
-        cy.visit('http://localhost:3002/ghost/')
+        cy.visit(`http://localhost:${port}/ghost/`)
         cy.wait(2000)        
         
     })
@@ -34,7 +34,7 @@ describe('New post', () => {
         index++
         cy.wait(100)
                 
-        cy.url().should('eq', 'http://localhost:2368/ghost/#/site')
+        cy.url().should('eq', `http://localhost:${port}/ghost/#/site`)
         cy.screenshot('vrt/Scenario1'  + '/Scenario1' +'_V3-' + index) 
         index++
         cy.wait(100)
