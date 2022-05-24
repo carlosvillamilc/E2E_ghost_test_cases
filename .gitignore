@@ -41,14 +41,11 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+package-lock.json
+/package-lock.json
 
 # Kraken files
 /kraken_ghost/reports
 /kraken_ghost/node_modules
 
-<<<<<<< HEAD
-# Cypress files
-/cypress_ghost\node_modules
-=======
 /cypress/videos
->>>>>>> E2E_carlos

@@ -9,6 +9,8 @@
   "author": "Andres Eduardo Cárdenas",
   "license": "ISC",
   "dependencies": {
-    "resemblejs": "^4.1.0"
+    "resemblejs": "^4.1.0",
+    "cypress": "^9.6.1",
+    "cypress-xpath": "^1.6.2"
   }
 }
