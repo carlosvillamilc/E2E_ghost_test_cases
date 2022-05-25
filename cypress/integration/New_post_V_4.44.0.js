@@ -3,6 +3,7 @@ let password = '';
 let inviteUser='';
 let postTitle= '';
 let index = 1;
+let port = '3002';
 
 describe('New post', () => {
     beforeEach(()=>{        
@@ -13,77 +14,73 @@ describe('New post', () => {
             inviteUser = data.inviteUser
             postTitle = data.postTitle
         })
-        cy.visit('http://localhost:3002/ghost/')
+        cy.visit(`http://localhost:${port}/ghost/`)
         cy.wait(1000)        
         
     })
     it('Login, Test crear Post', () => {       
         cy.get('#ember7').type(user)
+        cy.wait(500)
         cy.screenshot('vrt/Scenario1'  + '/Scenario1' +'_V4-' + index) 
         index++
-        cy.wait(100)
 
         cy.get('#ember9').type(password)
+        cy.wait(500)
         cy.screenshot('vrt/Scenario1'  + '/Scenario1' +'_V4-' + index) 
         index++
-        cy.wait(100)
         
         cy.get('#ember11').click() 
+        cy.wait(500)
         cy.screenshot('vrt/Scenario1'  + '/Scenario1' +'_V4-' + index) 
         index++
-        cy.wait(100)
                
-        cy.url().should('eq', 'http://localhost:3002/ghost/#/dashboard')
+        cy.url().should('eq', `http://localhost:${port}/ghost/#/dashboard`)
         cy.get('a[href="#/posts/"]').eq(0).click()   
+        cy.wait(500)
         cy.screenshot('vrt/Scenario1'  + '/Scenario1' +'_V4-' + index) 
         index++
-        cy.wait(100)
         
         cy.get('a[href="#/editor/post/"]').eq(0).click() 
+        cy.wait(500)
         cy.screenshot('vrt/Scenario1'  + '/Scenario1' +'_V4-' + index) 
         index++
-        cy.wait(100)
          
         cy.get('[placeholder="Post title"]').type(postTitle)
+        cy.wait(500)
         cy.screenshot('vrt/Scenario1'  + '/Scenario1' +'_V4-' + index) 
         index++
-        cy.wait(100)
         
         cy.get('[data-placeholder="Begin writing your post..."]').type("Nuevo Post Texto")
+        cy.wait(500)
         cy.screenshot('vrt/Scenario1'  + '/Scenario1' +'_V4-' + index) 
         index++
-        cy.wait(100)
         
         cy.get('div[class="gh-publishmenu ember-view"]').click()
+        cy.wait(500)
         cy.screenshot('vrt/Scenario1'  + '/Scenario1' +'_V4-' + index) 
         index++
-        cy.wait(100)
         
         cy.get('button[class="gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view"]').click()
+        cy.wait(500)
         cy.screenshot('vrt/Scenario1'  + '/Scenario1' +'_V4-' + index) 
         index++
-        cy.wait(100)
         
         cy.get('button[class="gh-btn gh-btn-black gh-btn-icon ember-view"]').click()
+        cy.wait(500)
         cy.screenshot('vrt/Scenario1'  + '/Scenario1' +'_V4-' + index) 
         index++
-        cy.wait(100)
         
         cy.get('a[href="#/posts/"]').eq(0).click()
+        cy.wait(500)
         cy.screenshot('vrt/Scenario1'  + '/Scenario1' +'_V4-' + index) 
         index++
-        cy.wait(100)
-        cy.reload()
-
+        cy.wait(2000)    
         cy.get('div[class="flex-auto flex items-center"]').click()
         cy.screenshot('vrt/Scenario1'  + '/Scenario1' +'_V4-' + index) 
         index++
         cy.wait(100)
       
         cy.get('a[href="#/signout/"]').click()
-        cy.screenshot('vrt/Scenario1'  + '/Scenario1' +'_V4-' + index) 
-        index++
-        cy.wait(100)
           
     })
   })
