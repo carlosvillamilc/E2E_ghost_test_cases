@@ -49,3 +49,5 @@ package-lock.json
 /kraken_ghost/node_modules
 
 /cypress/videos
+/cypress/screenshots
+
