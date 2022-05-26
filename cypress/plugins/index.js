@@ -28,9 +28,9 @@ module.exports = (on, config) => {
     console.log(details) // print all details to terminal
 
     const newPath = details.path.replace('/cypress/screenshots/'+details.specName,'')
-    console.log(newPath)
+    console.log('newPath',newPath)
     vrtScreenshotsPath = newPath.substring(0,newPath.search('Scenario')+'Scenario'.length+1)
-    console.log(vrtScreenshotsPath)
+    console.log('vrtScreenshotsPath',vrtScreenshotsPath)
     ///Users/cavillamil/Desktop/MISO/misw4103-pruebas/E2E_ghost_test_cases/vrt/Scenario1/Scenario1_V3-1.png
     return new Promise((resolve, reject) => {
       if (!fs.existsSync(vrtScreenshotsPath)){

@@ -37,7 +37,7 @@ describe('Delete page', () => {
         cy.wait(500)
         cy.screenshot('vrt/Scenario5'  + '/Scenario5' +'_V3-' + index) 
         index++        
-        cy.get('section.content-list > ol > li.gh-list-row.gh-posts-list-item').click()
+        cy.get('section.content-list > ol > li.gh-list-row.gh-posts-list-item').eq(0).click()
         cy.wait(500)
         cy.screenshot('vrt/Scenario5'  + '/Scenario5' +'_V3-' + index) 
         index++        
