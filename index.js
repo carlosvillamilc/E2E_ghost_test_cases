@@ -2,38 +2,126 @@ const compareImages = require("resemblejs/compareImages")
 const config = require("./config.json");
 const fs = require('fs');
 const { options } = config;
+const folders = [12,12,12,10,9,10,18,15,19,29];
+let dateTime = Date.now();
+let resultPath = "./vrt/results"
+
 async function executeTest(){
     let resultInfo = {}
     let resultInfoTotal = []
-    const folders = [10, 18,15,19,29];
+    let imagePathV3 = ''
+    let imagePathV4 = ''
+    let compareImagePath = ''
     let folderName ="./vrt/Scenario";
     let imageName ="/Scenario"
-    console.log((folders.length)*2)
-    console.log(folders[1])
-    for(let folderindex = 5 ; folderindex <= (folders.length)*2; folderindex++){
-        console.log("for1")
-        for(let imageIndex = 1 ; imageIndex <= folders[folderindex-5]; imageIndex++ ){
-            console.log("for2")
-            console.log(folderName + (folderindex +1) + imageName + (folderindex+1) + '_V3-'+ imageIndex +'.png')
+    
+    
+    if (!fs.existsSync(resultPath)) {
+        fs.mkdirSync(resultPath);
+      }
+    
+    //console.log((folders.length)*2)
+    //console.log(folders[1])
+    for(let folderindex = 0 ; folderindex < (folders.length); folderindex++){     
+        resultInfo = {}   
+        for(let imageIndex = 0 ; imageIndex < folders[folderindex]; imageIndex++ ){     
+
+            imagePathV3= folderName + (folderindex +1) + imageName + (folderindex+1) + '_V3-'+ (imageIndex+1) +'.png'
+            imagePathV4= folderName + (folderindex +1) + imageName + (folderindex+1) + '_V4-'+ (imageIndex+1) +'.png'
+            
+            //console.log(imagePathV3)
+            //console.log(imagePathV4)
+            
             const data = await compareImages(
-                fs.readFileSync(folderName + (folderindex +1) + imageName + (folderindex+1) + '_V3-'+ imageIndex +'.png'),
-                fs.readFileSync(folderName + (folderindex +1) + imageName + (folderindex+1) + '_V4-'+ imageIndex +'.png'),
+                fs.readFileSync(imagePathV3),
+                fs.readFileSync(imagePathV4),
                 options
             );
-            resultInfo[imageIndex] = {
+
+            compareImagePath = folderName + (folderindex +1) + imageName + (folderindex+1) + 'Compare-' + (imageIndex+1) +'.png'
+            
+            resultInfo[imageIndex+1] = {
+                scenario: imageName + (folderindex+1),
                 isSameDimensions: data.isSameDimensions,
                 dimensionDifference: data.dimensionDifference,
                 rawMisMatchPercentage: data.rawMisMatchPercentage,
                 misMatchPercentage: data.misMatchPercentage,
                 diffBounds: data.diffBounds,
-                analysisTime: data.analysisTime
-            }
-            fs.writeFileSync(folderName + (folderindex +1) +'/'+ imageName + imageIndex + 'Compare-' + imageIndex +'.png', data.getBuffer());
-        }
+                analysisTime: data.analysisTime,
+                imagePath: '../'+ imageName + (folderindex +1) + imageName + (folderindex+1) + 'Compare-' + (imageIndex+1) +'.png'
+            }            
+            fs.writeFileSync(compareImagePath, data.getBuffer());
+        }        
+        //fs.copyFileSync('./index.css', `${resultPath}/index.css`);
         resultInfoTotal.push(resultInfo);
-    }
+    }    
+    //fs.writeFileSync(`${resultPath}/report.html`, createReport(dateTime, resultInfoTotal));
     console.log('------------------------------------------------------------------------------------')
     console.log("Execution finished. Check the report under the results folder")
     return resultInfoTotal;
 }
-(async ()=>console.log(await executeTest()))();
+
+
+
+function reportScenarios(info){   
+    console.log(info) 
+    let htmlCode = ''
+    let completeCode = '';
+    info.forEach((element,index) => {
+        htmlCode = ''
+        htmlImageCode = ''
+        Object.entries(element).forEach(([key, value]) => {            
+            let htmlImageCode = `
+            <div class="imgline">
+              <div class="imgcontainer">
+                <span class="imgname">Diff Step ${key}</span>
+                <img class="imgfull" src="${value.imagePath}" id="diffImage" label="Diff">
+              </div>
+            </div>`
+            
+            htmlCode = htmlCode + htmlImageCode
+            
+        })
+        //console.log(htmlCode)
+        let titleCode = `<div class=" browser" id="test0">
+                            <div class=" btitle">
+                                <h2>Step: ${info[index][1].scenario}</h2>
+                                <!--<p>Data: ${JSON.stringify(info)}</p>-->
+                            </div>    
+                            ${htmlCode}
+                        </div>`
+        
+        completeCode = completeCode + titleCode
+         
+    });        
+        
+  return completeCode
+}
+
+function createReport(datetime, resInfo){
+    return `
+    <html>
+        <head>
+            <title> VRT Report </title>
+            <link href="index.css" type="text/css" rel="stylesheet">
+        </head>
+        <body>
+            <h1>Report for 
+                 <a href="${config.url}"> ${config.url}</a>
+            </h1>
+            <p>Executed: ${datetime}</p>
+            <div id="visualizer">
+                ${reportScenarios(resInfo)}
+            </div>
+        </body>
+    </html>`
+}
+
+async function vrtTest(){
+    console.log("Caller");
+    let resultTest = await executeTest();
+    console.log("After waiting");
+    fs.writeFileSync(`${resultPath}/report.html`, createReport(dateTime, resultTest));
+}
+
+vrtTest();
