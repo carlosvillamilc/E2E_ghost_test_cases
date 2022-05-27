@@ -3,7 +3,7 @@ const config = require("./config.json");
 const fs = require('fs');
 const { options } = config;
 const folders = [12,12,12,10,9,10,18,15,19,29];
-let dateTime = Date.now();
+let dateTime = new Date().toLocaleString('es-CO')
 let resultPath = "./vrt/results"
 
 async function executeTest(){
@@ -19,10 +19,8 @@ async function executeTest(){
     if (!fs.existsSync(resultPath)) {
         fs.mkdirSync(resultPath);
       }
-    
-    //console.log((folders.length)*2)
-    //console.log(folders[1])
-    for(let folderindex = 0 ; folderindex < (folders.length); folderindex++){     
+    for(let folderindex = 0 ; folderindex < 1; folderindex++){     
+    //for(let folderindex = 0 ; folderindex < (folders.length); folderindex++){     
         resultInfo = {}   
         for(let imageIndex = 0 ; imageIndex < folders[folderindex]; imageIndex++ ){     
 
@@ -75,6 +73,18 @@ function reportScenarios(info){
             <div class="imgline">
               <div class="imgcontainer">
                 <span class="imgname">Diff Step ${key}</span>
+                <table>
+                    <tr>
+                        <th>rawMisMatchPercentage</th>
+                        <th>misMatchPercentage</th>
+                        <th>analysisTime</th>
+                    </tr>
+                    <tr>
+                        <td>${value.rawMisMatchPercentage}</td>
+                        <td>${value.misMatchPercentage}</td>
+                        <td>${value.analysisTime}</td>
+                </tr>                
+                </table>                
                 <img class="imgfull" src="${value.imagePath}" id="diffImage" label="Diff">
               </div>
             </div>`
@@ -85,7 +95,7 @@ function reportScenarios(info){
         //console.log(htmlCode)
         let titleCode = `<div class=" browser" id="test0">
                             <div class=" btitle">
-                                <h2>Step: ${info[index][1].scenario}</h2>
+                                <h2>${info[index][1].scenario.substring(1)}</h2>                                
                                 <!--<p>Data: ${JSON.stringify(info)}</p>-->
                             </div>    
                             ${htmlCode}
