@@ -2,6 +2,15 @@
 
 ## Porfavor tener en cuenta las precondiciones antes de ejecutar los casos
 
+*       Realizar la instalación de Ghost en una imagen de Docker.
+*       Tener instalado Git en su máquina. (No se explica en este Readme)
+*       Tener instalaso Visual Studio Code. (No se explica en este Readme)
+*       Tener instalado Node JS. (No se explica en este Readme)
+*       Tener instalado Cypress. (No se explica en este Readme)
+
+0. Instalación de Kraken:
+*       npm install kraken-node -g
+
 1. Realizar la instalación de Docker:
 * 		En este link buscan su sistema operativo e instalan el Docker -> https://docs.docker.com/desktop/mac/install/
 Ejecutar los siguientes comandos para instalar las imágenes necesarias para correr las dos versiones de Ghost
