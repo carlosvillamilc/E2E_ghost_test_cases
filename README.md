@@ -27,6 +27,7 @@ Luego de tener instaladas las dos imagenes de docker se debe ejecutar el comando
     * Desdde la terminal ejecute el siguiente comando: npx kraken-node run
 
 6. Para ejecutar el comando que corre las pruebas en Cypress:
+    * Dentro de la ruta cypress/fixtures encontrará un archivo ghost.json, en el cual debe actualizar las variables "user" y "password" con las credenciales de autenticación de ghost.
     * Desde la terminal ubiquese en la carpeta de raiz
     * Desde la terminal ejecute el siguiente comando: 
         `cypress run --spec cypress/integration/New_post.js,cypress/integration/New_post_V_4.44.0.js,cypress/integration/Scheduled_post.js,cypress/integration/Scheduled_post_V_4.44.0.js,cypress/integration/Draft_post.js,cypress/integration/Draft_post_V_4.44.0.js,cypress/integration/New_page.js,cypress/integration/New_page-4.40.js,cypress/integration/Delete_page-3.41.1.js,cypress/integration/Delete_page-4.40.js`
