@@ -2,6 +2,15 @@
 
 ## Porfavor tener en cuenta las precondiciones antes de ejecutar los casos
 
+*       Realizar la instalación de Ghost en una imagen de Docker.
+*       Tener instalado Git en su máquina. (No se explica en este Readme)
+*       Tener instalaso Visual Studio Code. (No se explica en este Readme)
+*       Tener instalado Node JS. (No se explica en este Readme)
+*       Tener instalado Cypress. (No se explica en este Readme)
+
+0. Instalación de Kraken:
+*       npm install kraken-node -g
+
 1. Realizar la instalación de Docker:
 * 		En este link buscan su sistema operativo e instalan el Docker -> https://docs.docker.com/desktop/mac/install/
 Ejecutar los siguientes comandos para instalar las imágenes necesarias para correr las dos versiones de Ghost
@@ -18,7 +27,7 @@ Luego de tener instaladas las dos imagenes de docker se debe ejecutar el comando
 
 3. Ingresar a Ghost y crear un usuario y contraseña el cual debe ser exactamente igual para ambas versiones.
 
-4. Dirigirse al archivo properties.json y cambiar el valor establecido por el generado por usted así: 
+4. Dirigirse al archivo properties.json dentro de la carpeta kraken_ghost y cambiar el valor establecido por el generado por usted así: 
     "USERNAME1": "correo@generado",
     "PASSWORD1": "claveGenerada",
 
@@ -27,13 +36,15 @@ Luego de tener instaladas las dos imagenes de docker se debe ejecutar el comando
     * Desdde la terminal ejecute el siguiente comando: npx kraken-node run
 
 6. Para ejecutar el comando que corre las pruebas en Cypress:
-    * Desde la terminal ubiquese en la carpeta de Cypress
-    * Desde la terminal ejecute el siguiente comando: npx cypress open
-    * Desde la pantalla que se abre, ubique los test que se encuentran en la carpeta integration y seleccione el que desea correr para ver los
-      resultados de la ejecución.
+    * Dentro de la ruta cypress/fixtures encontrará un archivo ghost.json, en el cual debe actualizar las variables "user" y "password" con las credenciales de autenticación de ghost.
+    * Desde la terminal ubiquese en la carpeta de raiz
+    * Desde la terminal ejecute el siguiente comando: 
+        `cypress run --spec cypress/integration/New_post.js,cypress/integration/New_post_V_4.44.0.js,cypress/integration/Scheduled_post.js,cypress/integration/Scheduled_post_V_4.44.0.js,cypress/integration/Draft_post.js,cypress/integration/Draft_post_V_4.44.0.js,cypress/integration/New_page.js,cypress/integration/New_page-4.40.js,cypress/integration/Delete_page-3.41.1.js,cypress/integration/Delete_page-4.40.js`
 
-7. Para ejecutar las pruebas de VRT es necesario que se instalen las dependencias del Resemble.js con el comando "npm install resemblejs"
+7. Para ejecutar las pruebas de VRT es necesario que se instalen las dependencias de Resemble.js y Cypress con el comando "npm install" dado que se encuentran decalarados dentro del archivo package.json de la carpeta raiz.
 8. Ejecutar el comando "node index.js"
+
+9. El resultado de las pruebas la encontrara en la ruta /vrt/results/report.html el cual va a poder visualizar en un browser.    
     
 ## Casos seleccionados para realizar el VRT:
 
@@ -50,6 +61,7 @@ Luego de tener instaladas las dos imagenes de docker se debe ejecutar el comando
 
 ## Nota: 
     - Los ScreenShot de las pantallas quedan almacenadas en la carpeta que se crea automáticamente llamada vrt.
+    - Se deben ejecutar incialmente los casos de kraken, dado que en la ejecución de esos casos se crea la carpeta donde se generan los resultados (/vrt)
     
 ## Pros y Contras de las herramientas:
 
