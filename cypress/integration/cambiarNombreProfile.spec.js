@@ -5,6 +5,7 @@ let password = '';
 let inviteUser='';
 let postTitle= '';
 let newUserName = '';
+let port = '3001';
 
 describe('Cambiar nombre perfil', () => {
     beforeEach(()=>{        
@@ -16,7 +17,7 @@ describe('Cambiar nombre perfil', () => {
             postTitle = data.postTitle
             newUserName = data.newUserName
         })
-        cy.visit('http://localhost:2368/ghost/')
+        cy.visit(`http://localhost:${port}/ghost/`)
         
         cy.wait(2000)        
         
@@ -25,7 +26,7 @@ describe('Cambiar nombre perfil', () => {
         cy.get('#ember8').type(user)
         cy.get('#ember10').type(password)
         cy.get('#ember12').click()        
-        cy.url().should('eq', 'http://localhost:2368/ghost/#/site')
+        cy.url().should('eq', `http://localhost:${port}/ghost/#/site`)
         cy.get('div.gh-nav-bottom').click();
         cy.wait(1000)                
         cy.contains(' Your Profile ').click();

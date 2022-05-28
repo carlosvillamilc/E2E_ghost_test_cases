@@ -6,6 +6,7 @@ let inviteUser='';
 let postTitle= '';
 let newUserName = '';
 let errorMail = '';
+let port = '3001';
 
 describe('View Page, Subscribe, Check', () => {
     beforeEach(()=>{        
@@ -17,15 +18,13 @@ describe('View Page, Subscribe, Check', () => {
             postTitle = data.postTitle
             newUserName = data.newUserName
             errorMail = data.errorMail
-        })
-        cy.visit('http://localhost:2368/')
-        
+        })        
+        cy.visit(`http://localhost:${port}`)        
         cy.wait(1000)        
         
     })
     it('View Page, Subscribe, Check', () => {       
         
-        cy.url().should('eq', 'http://localhost:2368/')        
         cy.get(`a[href="#subscribe"]`).eq(0).click();
         cy.wait(500);
         cy.get('.subscribe-email').type(errorMail);

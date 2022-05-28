@@ -5,7 +5,7 @@ let password = '';
 let inviteUser='';
 let postTitle= '';
 let newUserName = '';
-
+let port = '3001';
 describe('Borrar label', () => {
     beforeEach(()=>{        
         cy.fixture('ghost.json').as('ghost')
@@ -16,7 +16,7 @@ describe('Borrar label', () => {
             postTitle = data.postTitle
             newUserName = data.newUserName
         })
-        cy.visit('http://localhost:2368/ghost/')        
+        cy.visit(`http://localhost:${port}/ghost/`)        
         cy.wait(2000)        
         
         
@@ -25,9 +25,9 @@ describe('Borrar label', () => {
         cy.get('#ember8').type(user)
         cy.get('#ember10').type(password)
         cy.get('#ember12').click()        
-        cy.url().should('eq', 'http://localhost:2368/ghost/#/site')
+        cy.url().should('eq', `http://localhost:${port}/ghost/#/site`)
         cy.wait(1000)
-        cy.get('#ember42').click();
+        cy.contains('Design').click();
         cy.wait(500)
         cy.get('button.gh-blognav-delete').eq(0).click();
         cy.contains('Save').click();
