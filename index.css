@@ -45,3 +45,17 @@
 .imgfull{
     width:100%
 }
+
+th, td {
+    text-align: center;
+    font-family: latoregular;
+    color: black;    
+    margin: 0 auto;
+    border:1px solid black;
+    font-size: 12px;
+  }
+table {
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 15px;
+}

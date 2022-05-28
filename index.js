@@ -18,9 +18,8 @@ async function executeTest(){
     
     if (!fs.existsSync(resultPath)) {
         fs.mkdirSync(resultPath);
-      }
-    for(let folderindex = 0 ; folderindex < 1; folderindex++){     
-    //for(let folderindex = 0 ; folderindex < (folders.length); folderindex++){     
+      }    
+    for(let folderindex = 0 ; folderindex < (folders.length); folderindex++){     
         resultInfo = {}   
         for(let imageIndex = 0 ; imageIndex < folders[folderindex]; imageIndex++ ){     
 
@@ -49,11 +48,9 @@ async function executeTest(){
                 imagePath: '../'+ imageName + (folderindex +1) + imageName + (folderindex+1) + 'Compare-' + (imageIndex+1) +'.png'
             }            
             fs.writeFileSync(compareImagePath, data.getBuffer());
-        }        
-        //fs.copyFileSync('./index.css', `${resultPath}/index.css`);
+        }                
         resultInfoTotal.push(resultInfo);
-    }    
-    //fs.writeFileSync(`${resultPath}/report.html`, createReport(dateTime, resultInfoTotal));
+    }        
     console.log('------------------------------------------------------------------------------------')
     console.log("Execution finished. Check the report under the results folder")
     return resultInfoTotal;
@@ -96,7 +93,6 @@ function reportScenarios(info){
         let titleCode = `<div class=" browser" id="test0">
                             <div class=" btitle">
                                 <h2>${info[index][1].scenario.substring(1)}</h2>                                
-                                <!--<p>Data: ${JSON.stringify(info)}</p>-->
                             </div>    
                             ${htmlCode}
                         </div>`
@@ -128,10 +124,11 @@ function createReport(datetime, resInfo){
 }
 
 async function vrtTest(){
-    console.log("Caller");
-    let resultTest = await executeTest();
-    console.log("After waiting");
+    console.log("Test Execution in progress...");
+    let resultTest = await executeTest();    
     fs.writeFileSync(`${resultPath}/report.html`, createReport(dateTime, resultTest));
+    fs.copyFileSync('./index.css', `${resultPath}/index.css`);
+
 }
 
 vrtTest();
