@@ -66,6 +66,9 @@ Luego de tener instaladas las dos imagenes de docker se debe ejecutar el comando
 ## Pros y Contras de las herramientas:
 
     * Dirigirse a la wiki del proyecto.
+    
+## IMPORTANTE
+        Este repositorio contiene unicamente una parte del trabajo final, para ver la otra parte del proyecto (los escenarios con datos invalidos) porfavor dirigirse a este link https://github.com/carlosvillamilc/e2e_dataPools
 
 
 ## E2E_ghost_test_cases
